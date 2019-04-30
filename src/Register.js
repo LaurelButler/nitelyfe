@@ -1,9 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 
 class Register extends React.Component {
     render() {
         return(
             <div className="register">
+                <nav role="navigation">
+                    <Link to='/'>Home</Link>
+                    <Link to='/login'>Login</Link>
+                    <Link to='/register'>Register</Link>
+                </nav>
                 <header>
                     <h3>Want to stay updated on the latest events?</h3>
                     <h4>Register here:</h4>
