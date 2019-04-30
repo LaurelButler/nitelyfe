@@ -3,7 +3,7 @@ import React from 'react';
 class Users extends React.Component {
     render() {
         return (
-            <div>
+            <div className="users">
                 <nav role="navigation">
                     <a href="#">Home</a>
                     <a href="#">Logout</a>

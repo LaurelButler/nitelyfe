@@ -3,7 +3,7 @@ import React from 'react';
 class Register extends React.Component {
     render() {
         return(
-            <div className="users">
+            <div className="register">
                 <header>
                     <h3>Want to stay updated on the latest events?</h3>
                     <h4>Register here:</h4>
@@ -27,6 +27,8 @@ class Register extends React.Component {
                     </div>
                     <button type='submit'>Sign Up</button>
                 </form>
+
+                
                 <header role="banner">
                     <h3>Interested in becoming an Admin?</h3>
                 </header>

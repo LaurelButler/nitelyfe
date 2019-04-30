@@ -3,7 +3,7 @@ import React from 'react';
 class AdminPage extends React.Component {
     render() {
         return (
-            <div>
+            <div className="admin-page">
                 <nav role="navigation">
                     <a href="#">Home</a>
                     <a href="#">Logout</a>
