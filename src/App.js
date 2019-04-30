@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import Homepage from './Homepage';
 // import AdminPage from './AdminPage';
 import Register from './Register';
+import LoginForm from './LoginForm';
 // import Users from './Users';
 
 
@@ -15,6 +16,7 @@ function App() {
         {/* <Route path="/users" component={ Users } />
         <Route path="/admins" component={ AdminPage } /> */}
         <Route path="/register" component={ Register } />
+        <Route path="/login" component={ LoginForm } />
     </Switch>
     </div>
   );
