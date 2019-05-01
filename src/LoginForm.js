@@ -8,7 +8,7 @@ class LoginForm extends React.Component {
             <div>
                 <nav role="navigation">
                     <Link to='/'>Home</Link>
-                    <Link to='/login'>Admin Panel</Link>
+                    <Link to='/admins'>Admin Panel</Link>
                     <Link to='/register'>Logout</Link>
                 </nav>
                 <form className="login-form">

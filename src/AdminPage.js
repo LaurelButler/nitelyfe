@@ -1,14 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class AdminPage extends React.Component {
     render() {
         return (
             <div className="admin-page">
                 <nav role="navigation">
-                    <a href="#">Home</a>
-                    <a href="#">Logout</a>
-                    <a href="#">Admin Panel</a>
-                    <a href="#">Change Password</a>
+                    <Link to='/'>Home</Link>
+                    <Link to='/admins'>Admin Panel</Link>
+                    <Link to='/login'>Logout</Link>
                 </nav>
                 <main role="main">
                     <header role="banner">
