@@ -8,8 +8,7 @@ class Register extends React.Component {
             <div className="register">
                 <nav role="navigation">
                     <Link to='/'>Home</Link>
-                    <Link to='/login'>Login</Link>
-                    <Link to='/register'>Register</Link>
+                    <Link to='/login'>Logout</Link>
                 </nav>
                 <header>
                     <h3>Want to stay updated on the latest events?</h3>

@@ -30,6 +30,10 @@ class Users extends React.Component {
                     <section>
                         <em>[when clicking on a submission, it will expand to the text and the option to edit or delete their submission]</em>
                     </section>
+
+                    <section>
+                        <em>[this section will allow for new submissions]</em>
+                    </section>
                 </main>
                 <footer role="content-info">&copy;rest_onyour_laurels 2019. All rights Reserved.</footer>
             </div>
