@@ -3,7 +3,20 @@ import { Link } from 'react-router-dom';
 
 class Homepage extends React.Component {
 
+    dateChange = (event) => {
+        console.log(event.target.value);
+        this.props.changeDay(event.target.value)
+    }
+
     render() {
+        //console.log(this.props.events);
+
+        const events = this.props.events.map((e, index) => 
+            <li key={index}>
+                 <p>{e.description}</p>
+             </li>
+             ) 
+        
         return(
             <div className="home-page">
                 <nav role="navigation">
@@ -13,28 +26,35 @@ class Homepage extends React.Component {
                 </nav>
                 <header role="banner">
                     <h1>NiteLyfe</h1>
+                    {/* had to be wrapped in ul tags because it was multiple items */}
+                    <ul>
+                    {events}
+                    </ul>
                     <h2>Find the best service industry events here where balling on a budget is a habit!</h2>
                     <h3>Bringing together a sense of community and a way to wind down.</h3>
                 </header>
                 <header role="banner">
                     <h3>Find out where you're headed here:</h3>
                 </header>
-                <select>
+                <select onChange = {this.dateChange}>
                     <option value="" selected disabled hidden>Choose here</option>
-                    <option value="Sunday">Sunday</option>
-                    <option value="Monday">Monday</option>
-                    <option value="Tuesday">Tuesday</option>
-                    <option value="Wednesday">Wednesday</option>
-                    <option value="Thursday">Thursday</option>
-                    <option value="Friday">Friday</option>
-                    <option value="Saturday">Saturday</option>
+                    <option value="6">Sunday</option>
+                    <option value="0">Monday</option>
+                    <option value="1">Tuesday</option>
+                    <option value="2">Wednesday</option>
+                    <option value="3">Thursday</option>
+                    <option value="4">Friday</option>
+                    <option value="5">Saturday</option>
                 </select>
-                <header role="banner">
+
+                {/* figure out how to set this up later */}
+                {/* <header role="banner">
                     <h3>Looking for a specific place instead?</h3>
                 </header>
                 <label htmlFor="search">Search</label>
                 <input type="text" name='search' id='search' placeholder='e.g. Olde Blind Dog' />
-                <button type="submit" onSubmit={this.handleSubmit}>Go!</button>
+                <button type="submit" onSubmit={this.handleSubmit}>Go!</button> */}
+
                 <header role="banner">
                     <h3>These places are on fire right now:</h3>
                 </header>

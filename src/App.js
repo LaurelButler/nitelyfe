@@ -12,8 +12,12 @@ class App extends React.Component {
 
   state = {
     events: [],
+    dayIndex: null,
   }
 
+  changeDay = (dayIndex) => {
+    this.setState({dayIndex})
+  }
 //this fetch request is getting the server to communicate with the client
 fetchApi(method = 'GET', apiBody) {
   return fetch(`http://localhost:8000/api/events` , {
@@ -26,29 +30,37 @@ fetchApi(method = 'GET', apiBody) {
   .then(res => {
     return res.json()
   })
+  .then(data => {
+    this.setState({
+      events: data
+    })
+    console.log(this.state.events)
+  })
   .catch(err => console.log('Error', err));
 }
 
 
   componentDidMount() {
-    fetch(`http://localhost:8000/api/events`)
-      .then(res => res.json())
-      .then(data => {
-        this.setState({
-          events: data
-        });  
-      });
+    this.fetchApi();
   }
 
  
 
 
   render() {
-    console.log(this.state);
+
+    const filterEvents = (event) => {
+        const dayOfWeek = new Date(event.date).getDay()
+        //this turns the string into a number
+        return dayOfWeek === parseInt(this.state.dayIndex)
+    }
+    // console.log(this.state);
     return (
       <div className="App">
         <Switch>
-          <Route exact path="/" component={Homepage} />
+          <Route exact path="/" render={() => (
+            <Homepage events={this.state.events.filter(filterEvents)} changeDay={this.changeDay}/>
+          )} /> 
           {/* <Route path="/users" component={ Users } /> */}
           <Route path="/admins" component={AdminPage} />
           <Route path="/register" component={Register} />
