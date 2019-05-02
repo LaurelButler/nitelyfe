@@ -14,7 +14,7 @@ class Register extends React.Component {
                     <h3>Want to stay updated on the latest events?</h3>
                     <h4>Register here:</h4>
                 </header>
-                <form class='signup-form'>
+                <form className='signup-form'>
                     <div>
                         <label for="first-name">First name</label>
                         <input placeholder='First Name' type="text" name='first-name' id='first-name' />
@@ -63,7 +63,7 @@ class Register extends React.Component {
                     </div>
                     <button type='submit'>Submit</button>
                 </form>
-                <footer role="content-info">&copy;rest_onyour_laurels 2019. All rights Reserved.</footer>
+                <footer>&copy;rest_onyour_laurels 2019. All rights Reserved.</footer>
             </div>
         )
     }

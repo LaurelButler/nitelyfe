@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 class Homepage extends React.Component {
+
     render() {
         return(
             <div className="home-page">
@@ -31,14 +32,15 @@ class Homepage extends React.Component {
                 <header role="banner">
                     <h3>Looking for a specific place instead?</h3>
                 </header>
-                <label for="search">Search</label>
+                <label htmlFor="search">Search</label>
                 <input type="text" name='search' id='search' placeholder='e.g. Olde Blind Dog' />
+                <button type="submit" onSubmit={this.handleSubmit}>Go!</button>
                 <header role="banner">
                     <h3>These places are on fire right now:</h3>
                 </header>
                 <p>[<em>company image placeholder</em>]</p>
                 <p>lorem ipsum</p>
-                <footer role="content-info">&copy;rest_onyour_laurels 2019. All rights Reserved.</footer>
+                <footer>&copy;rest_onyour_laurels 2019. All rights Reserved.</footer>
             </div>
         )
     }

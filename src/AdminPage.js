@@ -37,7 +37,7 @@ class AdminPage extends React.Component {
                         <input type="text" name="user-search" id="user-search" placeholder="e.g. Mary Jane" />
                     </section>
                 </main>
-                <footer role="content-info">&copy;rest_onyour_laurels 2019. All rights Reserved.</footer>  
+                <footer>&copy;rest_onyour_laurels 2019. All rights Reserved.</footer>  
             </div>
         )
     }
