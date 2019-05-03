@@ -50,11 +50,12 @@ fetchApi(method = 'GET', apiBody) {
   render() {
 
     const filterEvents = (event) => {
-        const dayOfWeek = new Date(event.date).getDay()
+        const dayOfWeek = (event.day_of_week)
         //this turns the string into a number
         return dayOfWeek === parseInt(this.state.dayIndex)
     }
-    // console.log(this.state);
+    
+    console.log(this.state.events);
     return (
       <div className="App">
         <Switch>
