@@ -13,10 +13,15 @@ class App extends React.Component {
   state = {
     events: [],
     dayIndex: null,
+    postEvents: '',
   }
 
   changeDay = (dayIndex) => {
     this.setState({dayIndex})
+  }
+
+  addEvent = (eventAddition) => {
+    this.setState({eventAddition})
   }
 //this fetch request is getting the server to communicate with the client
 fetchApi(method = 'GET', apiBody) {
