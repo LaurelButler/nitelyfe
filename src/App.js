@@ -1,5 +1,4 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
 import { Route, Switch } from 'react-router-dom';
 import Homepage from './Homepage';
 import AdminPage from './AdminPage';
@@ -12,25 +11,22 @@ class App extends React.Component {
 
   state = {
     events: [],
-    dayIndex: null,
-    postEvents: '',
+    dayIndex: null
   }
 
   changeDay = (dayIndex) => {
     this.setState({dayIndex})
   }
 
-  addEvent = (eventAddition) => {
-    this.setState({eventAddition})
-  }
+
 //this fetch request is getting the server to communicate with the client
-fetchApi(method = 'GET', apiBody) {
+getAllEvents = () => {
+  console.log('hello')
   return fetch(`http://localhost:8000/api/events` , {
-    method: method,
+    method: 'GET',
     headers: {
       'content-type': 'application/json'
-    },
-    body: JSON.stringify(apiBody)
+    }
   })
   .then(res => {
     return res.json()
@@ -46,11 +42,23 @@ fetchApi(method = 'GET', apiBody) {
 
 
   componentDidMount() {
-    this.fetchApi();
+    this.getAllEvents();
   }
 
- 
 
+  submitEvent = (data) => {
+    fetch('http://localhost:8000/api/events', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        "title": data.title,
+        "description": data.description,
+        "location": data.location,
+        "day_of_week": data.dayOfWeek
+      })
+    })
+    .then(this.getAllEvents)
+  };
 
   render() {
 
@@ -65,7 +73,9 @@ fetchApi(method = 'GET', apiBody) {
       <div className="App">
         <Switch>
           <Route exact path="/" render={() => (
-            <Homepage events={this.state.events.filter(filterEvents)} changeDay={this.changeDay}/>
+            <Homepage events={this.state.events.filter(filterEvents)} 
+                      changeDay={this.changeDay}
+                      submitEvent={this.submitEvent}/>
           )} /> 
           {/* <Route path="/users" component={ Users } /> */}
           <Route path="/admins" component={AdminPage} />

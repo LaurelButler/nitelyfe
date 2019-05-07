@@ -80,12 +80,13 @@ section {
 }
 
 
-.submit-form {
+.submission-form {
   width: 400px;
   padding: 40px;
   border-radius: 3px;
   background: white;
   margin: 0 auto;
+  color: black;
 }
 
    form {

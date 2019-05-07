@@ -3,28 +3,16 @@ import { Link } from 'react-router-dom';
 import Emoji from 'react-emoji-render';
 // import Image from 'react-render-image';
 
+
 class Homepage extends React.Component {
 
     dateChange = (event) => {
-        console.log(event.target.value);
+        // console.log(event.target.value);
         this.props.changeDay(event.target.value)
     }
 
 
-    handleSubmit = (event) => {
-        event.preventDefault();
-        return (this.props.value)  
-    }
-    // handleSubmit = (event) => {
-    //     ev.preventDefault();
-    //     this.setState({ postEvents: [] });
-    //     const { description, location, day_of_week, title } = ev.target
 
-    //     description.value = '',
-    //     location.value = '',
-    //     day_of_week.value ='',
-    //     title.value = '',
-    // }
 
     render() {
 
@@ -56,7 +44,7 @@ class Homepage extends React.Component {
                     <h3>Find out where you're headed here:</h3>
                 </header>
                 <select onChange = {this.dateChange}>
-                    <option value="" selected disabled hidden>Choose here</option>
+                    <option value="" disabled hidden>Choose here</option>
                     <option value="0">Sunday</option>
                     <option value="1">Monday</option>
                     <option value="2">Tuesday</option>
@@ -88,36 +76,9 @@ class Homepage extends React.Component {
                 <header role="banner">
                     <h3>Heard of some cool places you want us to know about? Tell us here:</h3>
                 </header>
-                <div id="submit-form">
-                <form className="submission-form" onSubmit={this.handleSubmit}>
-                    <div>
-                        <label for="title">Name of Event</label>
-                        <input type="text" name="title" id="event-title" />
-                    </div>
-                    <div>
-                        <label for="description">What do you need to attend? What does the event entail?</label>
-                        <input type="text" name="description" id="event-description" />
-                    </div>
-                    <div>
-                        <label for="location">Where is it located?</label>
-                        <input type="text" name="location" id="event-location" />
-                    </div>
-                    <div>
-                        <label for="day_of_week">Which day does the event fall on?</label>
-                        <select onChange={this.dateChange} required>
-                            <option value="" selected disabled hidden>Choose here</option>
-                            <option value="0">Sunday</option>
-                            <option value="1">Monday</option>
-                            <option value="2">Tuesday</option>
-                            <option value="3">Wednesday</option>
-                            <option value="4">Thursday</option>
-                            <option value="5">Friday</option>
-                            <option value="6">Saturday</option>
-                        </select>
-                    </div>
-                    <button type='submit'>Submit</button>
-                </form>
-                </div>
+            
+                <SubmitForm submitEvent={this.props.submitEvent}/>
+            
                 <footer>&copy;rest_onyour_laurels 2019. All rights Reserved.</footer>
             </div>
         )
@@ -125,3 +86,78 @@ class Homepage extends React.Component {
 }
 
 export default Homepage;
+
+
+
+class SubmitForm extends React.Component {
+
+    state = {
+        title: '',
+        description: '',
+        location: '',
+        dayOfWeek: ''
+    }
+
+    onSubmit = event => {
+        event.preventDefault();
+        this.props.submitEvent(this.state)
+    }
+
+    onFormChange = event => {
+        // const name = event.target.name
+        // const value = event.target.value
+        const { name, value } = event.target
+        this.setState({
+            [name] : value
+        })
+    }
+
+    render() {
+        return (
+            <form className="submission-form" onSubmit = {this.onSubmit}>
+
+                <label htmlFor="title">Name of event:</label>
+                <input
+                    name="title"
+                    required
+                    type="text"
+                    value={this.state.title}
+                    onChange={this.onFormChange}
+                    placeholder="Title" />
+                <label htmlFor="day_of_week">Details:</label>
+                <input
+                    name = "description"
+                    required
+                    type="text"
+                    value={this.state.description}
+                    onChange={this.onFormChange}
+                    placeholder="Description" />
+                <label htmlFor="day_of_week">Location:</label>
+                <input
+                    name = "location"
+                    required
+                    type="text" 
+                    value={this.state.location}
+                    onChange={this.onFormChange}
+                    placeholder="Address" />
+                <div>
+                    <label htmlFor="day_of_week">Which day does the event fall on?</label>
+                    <select value={this.state.dayOfWeek}
+                            onChange={this.onFormChange}
+                            name = "dayOfWeek"
+                            required >
+                        <option value="" disabled hidden>Choose here</option>
+                        <option value="0">Sunday</option>
+                        <option value="1">Monday</option>
+                        <option value="2">Tuesday</option>
+                        <option value="3">Wednesday</option>
+                        <option value="4">Thursday</option>
+                        <option value="5">Friday</option>
+                        <option value="6">Saturday</option>
+                    </select>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        )
+    }
+}
