@@ -13,11 +13,11 @@ class LoginForm extends React.Component {
                 </nav>
                 <form className="login-form">
                     <div>
-                        <label for="username">Username</label>
+                        <label htmlFor="username">Username</label>
                         <input type="text" name='username' id='LoginForm-username' />
                     </div>
                     <div>
-                        <label for="password">Password</label>
+                        <label htmlFor="password">Password</label>
                         <input type="password" name='password' id='LoginForm-password' />
                     </div>
                     <button type='submit'>Login</button>

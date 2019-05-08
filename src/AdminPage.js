@@ -33,7 +33,7 @@ class AdminPage extends React.Component {
                     </section>
 
                     <section>
-                        <label for="user-search">Search Users:</label>
+                        <label htmlFor="user-search">Search Users:</label>
                         <input type="text" name="user-search" id="user-search" placeholder="e.g. Mary Jane" />
                     </section>
                 </main>
