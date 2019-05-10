@@ -5,6 +5,7 @@ import AdminPage from './AdminPage';
 import Register from './Register';
 import LoginForm from './LoginForm';
 // import Users from './Users';
+import EventsPage from './EventsPage';
 
 
 class App extends React.Component {
@@ -14,8 +15,8 @@ class App extends React.Component {
     dayIndex: null
   }
 
-  changeDay = (dayIndex) => {
-    this.setState({dayIndex})
+  changeDay = (event) => {
+    this.setState({dayIndex: event.target.value})
   }
 
 
@@ -63,6 +64,7 @@ getAllEvents = () => {
   render() {
 
     const filterEvents = (event) => {
+      console.log(this.state.dayIndex);
         const dayOfWeek = (event.day_of_week)
         //this turns the string into a number
         return dayOfWeek === parseInt(this.state.dayIndex)
@@ -73,14 +75,17 @@ getAllEvents = () => {
       <div className="App">
         <Switch>
           <Route exact path="/" render={() => (
-            <Homepage events={this.state.events.filter(filterEvents)} 
-                      changeDay={this.changeDay}
-                      submitEvent={this.submitEvent}/>
+            <Homepage />
           )} /> 
           {/* <Route path="/users" component={ Users } /> */}
           <Route path="/admins" component={AdminPage} />
           <Route path="/register" component={Register} />
           <Route path="/login" component={LoginForm} />
+          <Route path="/EventsPage" render={() => (
+            <EventsPage events={this.state.events.filter(filterEvents)}
+              changeDay={this.changeDay}
+              submitEvent={this.submitEvent}
+          /> )}  />
         </Switch>
       </div>
     )
