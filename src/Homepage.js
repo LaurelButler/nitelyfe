@@ -1,7 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Emoji from 'react-emoji-render';
+// import Emoji from 'react-emoji-render';
 // import Image from 'react-render-image';
+// import Img from 'react-image';
+// import screenshots from '';
+
+
 
 
 class Homepage extends React.Component {
@@ -16,15 +20,26 @@ class Homepage extends React.Component {
         return(
             <div className="home-page">
                 <nav role="navigation">
-                    <Link to='/'>Home</Link>
-                    <Link to='EventsPage'>Events</Link>
+                    <Link to='/' className="nav-link">Home</Link>
+                    <Link to='EventsPage' className="nav-link">Events</Link>
                     {/* <Link to='/login'>Login</Link>
                     <Link to='/register'>Register</Link> */}
                 </nav>
               
                 <header role="banner">
                     <h1>NiteLyfe </h1>
-                    <Emoji text=":cocktail:" onlyEmojiClassName="make-emojis-large" />
+                    {/* <Emoji text=":cocktail:" onlyEmojiClassName="make-emojis-large" /> */}
+                    <div id="slideshow">
+                        <div class="slide-wrapper">
+                            <div class="slide"><img src="/screenshots/ChampagneCocktail.jpg" alt="cocktail" /></div>
+                            <div class="slide"><img src="/screenshots/cocktailimage.jpg" alt="cocktail" /></div>
+                            <div class="slide"><img src="/screenshots/cocktails-promo.jpg" alt="cocktail" /></div>
+                            <div class="slide"><img src="/screenshots/flamingcocktail.jpeg" alt="cocktail" /></div>
+                            <div class="slide"><img src="/screenshots/shutterstock_332050613-0d96cb229c26.jpg" alt="cocktail" /></div>
+                    
+                        </div>
+                    
+                    </div>
                     <h2>Find the best service industry events here where balling on a budget is a habit!</h2>
                     <h3>Bringing together a sense of community and a way to wind down.</h3>
                 </header>
