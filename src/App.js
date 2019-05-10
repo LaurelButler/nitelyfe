@@ -23,7 +23,7 @@ class App extends React.Component {
 //this fetch request is getting the server to communicate with the client
 getAllEvents = () => {
   console.log('hello')
-  return fetch(`http://localhost:8000/api/events` , {
+  return fetch(`https://intense-brook-53921.herokuapp.com/api/events` , {
     method: 'GET',
     headers: {
       'content-type': 'application/json'
@@ -48,7 +48,7 @@ getAllEvents = () => {
 
 
   submitEvent = (data) => {
-    fetch('http://localhost:8000/api/events', {
+    fetch('https://intense-brook-53921.herokuapp.com/api/events', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
