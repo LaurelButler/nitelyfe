@@ -10,10 +10,10 @@ The purpose of this website is to really bring a sense of community amongst thos
 
 ## Technology Used
 
-*React
-*JavaScript
-*Node.js
-*PostgreSQL
+* React
+* JavaScript
+* Node.js
+* PostgreSQL
 
 
 
