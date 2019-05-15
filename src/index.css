@@ -80,10 +80,14 @@ nav a:visited {
   90% {margin-left: -2184px;}
 }
 
-ul {
+ul li{
   list-style-type: none;
   margin: 0;
   padding: 0;
+  background: white;
+  padding: 20px;
+  border-radius: 40px;
+  color: black;
 }
 li {
   display: inline-block;
@@ -141,6 +145,16 @@ button[type="submit"] {
   margin-bottom: 0;
   width: 320px;
   background-color: rgb(223, 153, 185);
+}
+
+.cardForEvent {
+  width: 400px;
+  padding: 40px;
+  border-radius: 3px;
+  background: white;
+  margin: 0 auto;
+  color: black;
+  margin-bottom: 40px;
 }
 
 @media only screen and (min-width: 600px)  {
