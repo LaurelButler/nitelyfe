@@ -4,6 +4,13 @@ import { Link } from 'react-router-dom';
 // import Image from 'react-render-image';
 // import Img from 'react-image';
 // import screenshots from '';
+// import ChampagneCocktail from './screenshots/ChampagneCocktail.jpg';
+import cocktailimage from './screenshots/cocktailimage.jpg';
+import cocktailsPromo from './screenshots/cocktailsPromo.jpg';
+// import flamingcocktail from './screenshots/flamingcocktail.jpeg';
+import whiskey from './screenshots/whisky.jpg';
+import martini from './screenshots/martini.jpg';
+
 
 
 
@@ -16,7 +23,7 @@ class Homepage extends React.Component {
     }
 
     render() {
-        
+        console.log(martini);
         return(
             <div className="home-page">
                 <nav role="navigation">
@@ -31,12 +38,11 @@ class Homepage extends React.Component {
                     {/* <Emoji text=":cocktail:" onlyEmojiClassName="make-emojis-large" /> */}
                     <div id="slideshow">
                         <div class="slide-wrapper">
-                            <div class="slide"><img src="/screenshots/ChampagneCocktail.jpg" alt="cocktail" /></div>
-                            <div class="slide"><img src="/screenshots/cocktailimage.jpg" alt="cocktail" /></div>
-                            <div class="slide"><img src="/screenshots/cocktails-promo.jpg" alt="cocktail" /></div>
-                            <div class="slide"><img src="/screenshots/flamingcocktail.jpeg" alt="cocktail" /></div>
-                            <div class="slide"><img src="/screenshots/shutterstock_332050613-0d96cb229c26.jpg" alt="cocktail" /></div>
-                    
+                            {/* <div class="slide"><img src={ChampagneCocktail} alt="cocktail"/></div> */}
+                            <div class="slide"><img src={cocktailimage} alt="cocktail"/></div>
+                            <div class="slide"><img src={cocktailsPromo} alt="cocktail" /></div>
+                            <div class="slide"><img src={martini} alt="cocktail" /></div>
+                            <div class="slide"><img src={whiskey} alt="cocktail" /></div>
                         </div>
                     
                     </div>
