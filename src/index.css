@@ -69,7 +69,10 @@ nav a:visited {
   width: 728px;
 }
 
-
+img{
+  height: 510px;
+  width: 728px;
+}
 @keyframes slide {
   20% {margin-left: 0px;}
   30% {margin-left: -728px;}
@@ -162,4 +165,11 @@ button[type="submit"] {
     float: right;
     width: 350px;
   }
+}
+@media only screen and (min-width: 400px)  {
+  .slide {
+  float: left;
+  height: 510px;
+  width: 728px;
+ }
 }
