@@ -1,15 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import Emoji from 'react-emoji-render';
-// import Image from 'react-render-image';
-// import Img from 'react-image';
-// import screenshots from '';
 // import ChampagneCocktail from './screenshots/ChampagneCocktail.jpg';
-import cocktailimage from './screenshots/cocktailimage.jpg';
-import cocktailsPromo from './screenshots/cocktailsPromo.jpg';
+import cocktailimage from '../screenshots/cocktailimage.jpg';
+import cocktailsPromo from '../screenshots/cocktailsPromo.jpg';
 // import flamingcocktail from './screenshots/flamingcocktail.jpeg';
-import whiskey from './screenshots/whisky.jpg';
-import martini from './screenshots/martini.jpg';
+import whiskey from '../screenshots/whisky.jpg';
+import martini from '../screenshots/martini.jpg';
 
 
 

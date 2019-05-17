@@ -3,6 +3,11 @@ xcode {
     monospace;
 }
 
+/* this creates a variable in css */
+:root {
+  --slide-image-width: 70vw;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -52,35 +57,37 @@ nav a:visited {
 
 #slideshow {
   overflow: hidden;
-  height: 510px;
-  width: 728px;
+  height: 70vw;
+  width: var(--slide-image-width);
   margin: 0 auto;
   
 }
 
 .slide-wrapper {
-  width: 2912px;
+  width: calc(var(--slide-image-width) * 4);
   animation: slide 18s ease infinite;
 } 
 
 .slide {
   float: left;
-  height: 510px;
-  width: 728px;
+  height: 70vw;
+  width: var(--slide-image-width);
 }
 
-img{
-  height: 510px;
-  width: 728px;
+img {
+  height: 70vw;
+  width: var(--slide-image-width);
+  object-fit: contain;
 }
+
 @keyframes slide {
   20% {margin-left: 0px;}
-  30% {margin-left: -728px;}
-  50% {margin-left: -728px;}
-  60% {margin-left: -1456px;}
-  70% {margin-left: -1456px;}
-  80% {margin-left: -2184px;}
-  90% {margin-left: -2184px;}
+  30% {margin-left: calc(var(--slide-image-width) * -1);}
+  50% {margin-left: calc(var(--slide-image-width) * -1);}
+  60% {margin-left: calc(var(--slide-image-width) * -2);}
+  70% {margin-left: calc(var(--slide-image-width) * -2);}
+  80% {margin-left: calc(var(--slide-image-width) * -3);}
+  90% {margin-left: calc(var(--slide-image-width) * -3);}
 }
 
 ul li{
@@ -150,20 +157,72 @@ button[type="submit"] {
   background-color: rgb(223, 153, 185);
 }
 
-.cardForEvent {
-  width: 400px;
-  padding: 40px;
-  border-radius: 3px;
+
+.EventCard {
+  width: 320px;
+  padding: 30px;
+  border-radius: 30px;
   background: white;
   margin: 0 auto;
   color: black;
   margin-bottom: 40px;
 }
 
-@media only screen and (min-width: 600px)  {
+.EventCard > * {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.EventCard h1 {
+  font-size: 15px;
+  height: 60px;
+  margin-bottom: 15px;
+  overflow: scroll;
+}
+
+.EventCard p {
+  font-size: 14px;
+  height: 120px;
+  margin-bottom: px;
+  overflow: scroll;
+}
+
+.EventCard span {
+  font-style: italic;
+  font-size: 14px;
+  height: 120px;
+}
+
+.EventsPage div {
+   display: flex;
+   flex-wrap: wrap;
+
+}
+
+button {
+  width: -25px;
+  height: 30px;
+  background-color: rgb(223, 153, 185);
+}
+
+@media only screen and (min-width: 728 px)  {
   nav > ul {
     float: right;
     width: 350px;
   }
+
+  :root {
+    --slide-image-width: 728px;
+  }
+
+  #slideshow, img, .slide {
+      height: 510px;
+  }
+
+  .EventCard { 
+    /* width: 320px; */
+  }
+
 }
 

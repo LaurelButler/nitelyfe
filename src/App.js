@@ -1,18 +1,18 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Homepage from './Homepage';
-import AdminPage from './AdminPage';
-import Register from './Register';
-import LoginForm from './LoginForm';
-// import Users from './Users';
-import EventsPage from './EventsPage';
+import Homepage from './views/Homepage';
+import AdminPage from './views/AdminPage';
+import Register from './components/Register';
+import LoginForm from './components/LoginForm';
+// import Users from './components/Users';
+import EventsPage from './views/EventsPage';
 
 
 class App extends React.Component {
 
   state = {
     events: [],
-    dayIndex: null
+    dayIndex: 0
   }
 
   changeDay = (event) => {

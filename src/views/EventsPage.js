@@ -4,17 +4,13 @@ import { Link } from 'react-router-dom';
 
 class EventsPage extends React.Component {
     render() {
- console.log(this.props.events);
         const events = this.props.events.map((e, index) =>
-            <li key={index}>
-                <p>{e.title}</p>
-                <p>{e.description}</p>
-                <p>{e.location}</p>
-            </li>
+           <EventCard key={index} 
+                      {...e}/>
         ) 
 
         return(
-            <div>
+            <div className="EventsPage">
                 <nav role="navigation">
                     <Link to='/'>Home</Link>
                 </nav>
@@ -31,9 +27,9 @@ class EventsPage extends React.Component {
                     <option value="5">Friday</option>
                     <option value="6">Saturday</option>
                 </select>
-                <ul>
+                <div>
                     {events}
-                </ul>
+                </div>
 
                 <header role="banner">
                     <h3>Heard of some cool places you want us to know about? Tell us here:</h3>
@@ -81,6 +77,7 @@ class SubmitForm extends React.Component {
                     name="title"
                     required
                     type="text"
+                    maxLength="16"
                     value={this.state.title}
                     onChange={this.onFormChange}
                     placeholder="Title" />
@@ -89,6 +86,7 @@ class SubmitForm extends React.Component {
                     name="description"
                     required
                     type="text"
+                    maxLength="80"
                     value={this.state.description}
                     onChange={this.onFormChange}
                     placeholder="Description" />
@@ -97,6 +95,7 @@ class SubmitForm extends React.Component {
                     name="location"
                     required
                     type="text"
+                    maxLength="80"
                     value={this.state.location}
                     onChange={this.onFormChange}
                     placeholder="Address" />
@@ -120,4 +119,16 @@ class SubmitForm extends React.Component {
             </form>
         )
     }
+}
+
+
+const EventCard = props => {
+    return (
+        <div className="EventCard">
+            <h1>{props.title}</h1>
+            <p>{props.description}</p>
+            <span>{props.location}</span>
+            <button>Delete</button>
+        </div>
+    )
 }
