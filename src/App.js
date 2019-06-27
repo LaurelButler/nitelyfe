@@ -62,11 +62,16 @@ getAllEvents = () => {
   };
 
   deleteEvent = (id) => {
-    fetch(`https://intense-brook-53921.herokuapp.com/api/events/${id}`, {
+    fetch(`http://localhost:8000/api/events/${id}`, {
       method: 'DELETE'
     })
-      .then(this.getAllEvents)
+      .then((res) => {
+        console.log('hello there', res);
+        this.getAllEvents(res);
+      })
   }
+
+  // https://intense-brook-53921.herokuapp.com/api/events/${id}
 
   render() {
 
@@ -92,6 +97,7 @@ getAllEvents = () => {
             <EventsPage events={this.state.events.filter(filterEvents)}
               changeDay={this.changeDay}
               submitEvent={this.submitEvent}
+              deleteEvent={this.deleteEvent}
           /> )}  />
         </Switch>
       </div>

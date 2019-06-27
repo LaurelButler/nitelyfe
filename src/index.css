@@ -140,7 +140,7 @@ h3 {
 }
 
 .try-us:hover {
-  transform: scale(1.5);
+  transform: scale(1.1);
 } 
 
 input[type="text"], button[type="submit"] {

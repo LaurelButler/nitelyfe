@@ -6,7 +6,8 @@ class EventsPage extends React.Component {
     render() {
         const events = this.props.events.map((e, index) =>
            <EventCard key={index} 
-                      {...e}/>
+                      {...e}
+                      deleteEvent = {this.props.deleteEvent}/>
         ) 
 
         return(
@@ -134,9 +135,8 @@ const EventCard = props => {
             <h1>{props.title}</h1>
             <p>{props.description}</p>
             <span>{props.location}</span>
-            <button>Delete</button>
+            <button onClick={() => props.deleteEvent(props.id)}>Delete</button>
         </div>
     )
 }
 
-// onClick = { props.deleteEvent(props.id) }
