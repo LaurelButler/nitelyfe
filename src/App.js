@@ -61,6 +61,13 @@ getAllEvents = () => {
     .then(this.getAllEvents)
   };
 
+  deleteEvent = (id) => {
+    fetch(`https://intense-brook-53921.herokuapp.com/api/events/${id}`, {
+      method: 'DELETE'
+    })
+      .then(this.getAllEvents)
+  }
+
   render() {
 
     const filterEvents = (event) => {

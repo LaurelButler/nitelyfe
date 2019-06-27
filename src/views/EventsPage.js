@@ -56,7 +56,13 @@ class SubmitForm extends React.Component {
 
     onSubmit = event => {
         event.preventDefault();
+        alert("Success! Checkout your event!")
         this.props.submitEvent(this.state)
+        this.setState({ title: '', description: '', location: '', dayOfWeek: '' })
+    }
+
+    handleFormReset = () => {
+        // this.setState(() => this.state)
     }
 
     onFormChange = event => {
@@ -132,3 +138,5 @@ const EventCard = props => {
         </div>
     )
 }
+
+// onClick = { props.deleteEvent(props.id) }
