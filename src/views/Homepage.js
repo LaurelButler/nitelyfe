@@ -31,10 +31,8 @@ class Homepage extends React.Component {
               
                 <header role="banner">
                     <h1>NiteLyfe </h1>
-                    {/* <Emoji text=":cocktail:" onlyEmojiClassName="make-emojis-large" /> */}
                     <div id="slideshow">
                         <div class="slide-wrapper">
-                            {/* <div class="slide"><img src={ChampagneCocktail} alt="cocktail"/></div> */}
                             <div class="slide"><img src={cocktailimage} alt="cocktail"/></div>
                             <div class="slide"><img src={cocktailsPromo} alt="cocktail" /></div>
                             <div class="slide"><img src={martini} alt="cocktail" /></div>
@@ -44,6 +42,7 @@ class Homepage extends React.Component {
                     </div>
                     <h2>Find the best service industry events here where balling on a budget is a habit!</h2>
                     <h3>Bringing together a sense of community and a way to wind down.</h3>
+                    <button className="try-us"><Link to='EventsPage'>Try Us Out!</Link></button>
                 </header>
                 
 
@@ -63,7 +62,7 @@ class Homepage extends React.Component {
                 <p>[<em>company image placeholder</em>]</p>
                 <p>lorem ipsum</p> */}
             
-                <footer>&copy;rest_onyour_laurels 2019. All rights Reserved.</footer>
+                <footer>&copy;Laurel Butler 2019. All rights Reserved.</footer>
             </div>
         )
     }

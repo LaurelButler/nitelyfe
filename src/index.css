@@ -47,7 +47,7 @@ nav a,
 nav a:hover,
 nav a:visited {
   color: white;
-  /* text-decoration: none; */
+  text-decoration: none;
 }
 
 .nav-link {
@@ -120,6 +120,7 @@ section {
 h3 {
   margin-top: 60px;
 }
+
 .submission-form {
   width: 400px;
   padding: 40px;
@@ -129,7 +130,18 @@ h3 {
   color: black;
   margin-bottom: 40px;
 }
-  
+
+.try-us {
+  border: 1px solid white;
+  background-color: white;
+  color: black;
+  width: 150px;
+  font-size: 20px;
+}
+
+.try-us:hover {
+  transform: scale(1.5);
+} 
 
 input[type="text"], button[type="submit"] {
   display: block;

@@ -61,9 +61,9 @@ class SubmitForm extends React.Component {
         this.setState({ title: '', description: '', location: '', dayOfWeek: '' })
     }
 
-    handleFormReset = () => {
-        // this.setState(() => this.state)
-    }
+    // handleFormReset = () => {
+    //     this.setState(() => this.state)
+    // }
 
     onFormChange = event => {
         // const name = event.target.name
