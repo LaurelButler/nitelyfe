@@ -19,7 +19,6 @@ class Homepage extends React.Component {
     }
 
     render() {
-        console.log(martini);
         return(
             <div className="home-page">
                 <nav role="navigation">
@@ -32,11 +31,11 @@ class Homepage extends React.Component {
                 <header role="banner">
                     <h1>NiteLyfe </h1>
                     <div id="slideshow">
-                        <div class="slide-wrapper">
-                            <div class="slide"><img src={cocktailimage} alt="cocktail"/></div>
-                            <div class="slide"><img src={cocktailsPromo} alt="cocktail" /></div>
-                            <div class="slide"><img src={martini} alt="cocktail" /></div>
-                            <div class="slide"><img src={whiskey} alt="cocktail" /></div>
+                        <div className="slide-wrapper">
+                            <div className="slide"><img src={cocktailimage} alt="cocktail"/></div>
+                            <div className="slide"><img src={cocktailsPromo} alt="cocktail" /></div>
+                            <div className="slide"><img src={martini} alt="cocktail" /></div>
+                            <div className="slide"><img src={whiskey} alt="cocktail" /></div>
                         </div>
                     
                     </div>
