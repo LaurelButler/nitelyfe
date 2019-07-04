@@ -76,12 +76,7 @@ getAllEvents = () => {
 
   render() {
 
-    const filterEvents = (event) => {
-      console.log(this.state.dayIndex);
-        const dayOfWeek = (event.day_of_week)
-        //this turns the string into a number
-        return dayOfWeek === parseInt(this.state.dayIndex)
-    }
+    
     
     return (
       <div className="App">
@@ -93,12 +88,23 @@ getAllEvents = () => {
           <Route path="/admins" component={AdminPage} />
           <Route path="/register" component={Register} />
           <Route path="/login" component={LoginForm} />
-          <Route path="/EventsPage" render={() => (
+          <Route path="/EventsPage/:day" render={(data) =>  {
+            console.log(data.match.params.day);
+
+            const filterEvents = (event) => {
+              console.log(this.state.dayIndex);
+              const dayOfWeek = (event.day_of_week)
+              //this turns the string into a number
+              return dayOfWeek === parseInt(data.match.params.day)
+            }
+
+            return (
             <EventsPage events={this.state.events.filter(filterEvents)}
               changeDay={this.changeDay}
               submitEvent={this.submitEvent}
               deleteEvent={this.deleteEvent}
-          /> )}  />
+            /> )
+          }} />
         </Switch>
       </div>
     )
