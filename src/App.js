@@ -63,7 +63,7 @@ getAllEvents = () => {
 
   deleteEvent = (id) => {
     console.log('hi', id);
-    fetch(`https://intense-brook-53921.herokuapp.com/api/events/${id}`, {
+    fetch(`https://intense-brook-53921.herokuapp.com/api/events/${id}}`, {
       method: 'DELETE'
     })
       .then((res) => {
