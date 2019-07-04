@@ -63,7 +63,7 @@ getAllEvents = () => {
 
   deleteEvent = (id) => {
     console.log('hi', id);
-    fetch(`https://intense-brook-53921.herokuapp.com/api/events/${id}}`, {
+    fetch(`https://intense-brook-53921.herokuapp.com/api/events/${id}`, {
       method: 'DELETE'
     })
       .then((res) => {
@@ -83,7 +83,6 @@ getAllEvents = () => {
         return dayOfWeek === parseInt(this.state.dayIndex)
     }
     
-    console.log('hey', this.state.events);
     return (
       <div className="App">
         <Switch>
