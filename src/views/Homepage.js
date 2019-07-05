@@ -23,7 +23,7 @@ class Homepage extends React.Component {
             <div className="home-page">
                 <nav role="navigation">
                     <Link to='/' className="nav-link">Home</Link>
-                    <Link to='EventsPage' className="nav-link">Events</Link>
+                    <Link to='EventsPage/0' className="nav-link">Events</Link>
                     {/* <Link to='/login'>Login</Link>
                     <Link to='/register'>Register</Link> */}
                 </nav>
