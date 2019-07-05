@@ -12,7 +12,7 @@ class App extends React.Component {
 
   state = {
     events: [],
-    dayIndex: 0
+    dayIndex: 0,
   }
 
   changeDay = (event) => {
@@ -32,11 +32,9 @@ getAllEvents = () => {
     return res.json()
   })
   .then(data => {
-    // console.log(data);
     this.setState({
       events: data
     })
-    // console.log(this.state.events)
   })
   .catch(err => console.log('Error', err));
 }
@@ -74,9 +72,20 @@ getAllEvents = () => {
 // http://localhost:8000/api/events/${id}
   // https://intense-brook-53921.herokuapp.com/api/events/${id}
 
-  render() {
 
-    
+  render() {
+    // const filterDayEvents = (urlDay) => {
+    //   console.log('inside of filter day', urlDay);
+    //   return [];
+    // }
+
+    const filterEvents = (event) => {
+
+    const dayOfWeek = (event.day_of_week)
+    //this turns the string into a number
+    return dayOfWeek === parseInt(this.state.dayIndex)
+      // return dayOfWeek === parseInt(data.match.params.day)
+    }
     
     return (
       <div className="App">
@@ -89,15 +98,8 @@ getAllEvents = () => {
           <Route path="/register" component={Register} />
           <Route path="/login" component={LoginForm} />
           <Route path="/EventsPage/:day" render={(data) =>  {
+            
             console.log(data.match.params.day);
-
-            const filterEvents = (event) => {
-              console.log(this.state.dayIndex);
-              const dayOfWeek = (event.day_of_week)
-              //this turns the string into a number
-              return dayOfWeek === parseInt(data.match.params.day)
-            }
-
             return (
             <EventsPage events={this.state.events.filter(filterEvents)}
               changeDay={this.changeDay}
@@ -106,6 +108,7 @@ getAllEvents = () => {
             /> )
           }} />
         </Switch>
+        {/* events={filterDayEvents(data.match.params.day)} */}
       </div>
     )
   }
